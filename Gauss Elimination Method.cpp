@@ -41,7 +41,21 @@ for(int i=0; i<n; i++){
 cout<<"Upper triangular matrix: "<<endl;
 print(mat);
 
+double value[n];
 
+value[n-1] = double(mat[n-1][n]) / mat[n-1][n-1];
+int j;
+
+    for(int i=n-2; i>=0; i--){
+        double sum = 0;
+        for(j=i+1; j<n; j++){
+            sum = sum + mat[i][j]*value[j];
+        }
+        value[i] = double( mat[i][j]-sum ) / mat[i][i];
+    }
+
+    /// value of x, y, z printed
+for(int i=0; i<n; i++) cout<<endl<< value[i] <<" ";
 
 
 return 0;
