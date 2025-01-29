@@ -7,13 +7,14 @@ using namespace std;
 
 double func(double x)
 {
-     cout<< "x = "<<x<< "   func()= "<< x* sin(x) + cos(x) <<endl;
+     cout<< "func- x="<<x<<"  func()="<< x* sin(x) + cos(x) <<endl;
 	return x* sin(x) + cos(x) ;
 }
 
 
 double derivFunc(double x)
 {
+    cout<< "derivfunc- x = "<<x<<" derivfunc()= "<< x* sin(x) + cos(x) <<endl;
 	return x* cos(x);
 }
 
@@ -35,8 +36,23 @@ void newtonRaphson(double x)
 
 int main()
 {
-	double x = 3.1416;
-	newtonRaphson(x);
+    double a,b,c;
+    cin>>a>>b;
+
+    if(func(a)*func(b) < 0){
+        if( fabs(func(a)) < fabs(func(b)) ){
+            c = a;
+        }
+        else{
+            c = b;
+        }
+    }
+    else{
+        cout<<"You have taken Invalid input."<<endl;
+        return 0;
+    }
+
+	newtonRaphson(c);
 	return 0;
 }
 
