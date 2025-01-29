@@ -1,20 +1,20 @@
-// C++ program for implementation of Newton Raphson Method for
-// solving equations
+
 #include<bits/stdc++.h>
-#define EPSILON 0.001
+#include <math.h>
+
+#define EPSILON 0.0001
 using namespace std;
 
-// An example function whose solution is determined using
-// Bisection Method. The function is x^3 - x^2 + 2
 double func(double x)
 {
-	return x*x*x - x*x + 2;
+     cout<< "x = "<<x<< "   func()= "<< x* sin(x) + cos(x) <<endl;
+	return x* sin(x) + cos(x) ;
 }
 
-// Derivative of the above function which is 3*x^x - 2*x
+
 double derivFunc(double x)
 {
-	return 3*x*x - 2*x;
+	return x* cos(x);
 }
 
 // Function to find the root
@@ -32,11 +32,11 @@ void newtonRaphson(double x)
 	cout << "The value of the root is : " << x;
 }
 
-// Driver program to test above
+
 int main()
 {
-	double x0 = -5; // Initial values assumed
-	newtonRaphson(x0);
+	double x = 3.1416;
+	newtonRaphson(x);
 	return 0;
 }
 
